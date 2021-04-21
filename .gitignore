@@ -8,4 +8,4 @@ temp/
 tmp/*
 !tmp/.gitkeep
 
-/src/database/database.sqlite
+src/database/database.sqlite
