@@ -2,10 +2,6 @@ import { getCustomRepository, Repository } from 'typeorm';
 import User from '../../models/users/User';
 import UsersRepository from '../../repositories/users/UsersRepository';
 
-interface Request {
-  email: string;
-}
-
 class UsersService {
   private usersRepository: Repository<User>;
 
@@ -13,7 +9,7 @@ class UsersService {
     this.usersRepository = getCustomRepository(UsersRepository);
   }
 
-  public async execute({ email }: Request) {
+  public async execute(email: string) {
     // Verificar se o usuário existe
     const userExists = await this.usersRepository.findOne({ email });
 
